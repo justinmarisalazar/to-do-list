@@ -11,7 +11,9 @@ export class TaskItem extends Component {
     }
     
     deleteHandler = () => {
-        this.setState({ task: this.props.mainTasks[this.props.id + 1].task });
+        this.setState({ task: this.props.mainTasks[this.props.id + 1]
+            ? this.props.mainTasks[this.props.id + 1].task
+            : null});
         this.props.deleteTask(this.props.id);
     }
 
